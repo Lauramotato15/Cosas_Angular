@@ -1,1 +1,21 @@
+<h3>Listado de heroes</h3>
+<!--Si la propiedad esta llena es = truthy y se mostrara el div-->
+<div *ngIf="deleteHero; else nothingWasDeleted">
+  <h5>heroe borrado <small class="text-danger">{{deleteHero}}</small></h5>
+</div>
 
+<!--Si la propiedad esta vacia es = truthy y se mostrara el h5-->
+<ng-template #nothingWasDeleted>
+  <h5>No ha borrado nada.</h5>
+</ng-template>
+
+<button
+  *ngIf="heroesNames.length > 0"
+  class="btn btn-outline-danger"
+  (click)="borrarHeroe()">
+  Borrar último heroe
+</button>
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroesNames" class="list-group-item">{{name}}</li>
+</ul>
