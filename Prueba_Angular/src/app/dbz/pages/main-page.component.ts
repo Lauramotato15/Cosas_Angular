@@ -7,6 +7,11 @@ import { Character } from '../interface/character.interface';
 })
 
 export class MainPageComponent {
+  public newCharacter:Character = {
+    name: 'relleno',
+    power: 12
+  };
+
   public arrayCharacter :Character[] = [
     {
       name: "Krillin",
@@ -17,4 +22,8 @@ export class MainPageComponent {
       power: 12
     }
   ];
+
+  emitCharacter(personaje:Character){
+    return console.log("Hola desde main"+personaje);
+  }
 }

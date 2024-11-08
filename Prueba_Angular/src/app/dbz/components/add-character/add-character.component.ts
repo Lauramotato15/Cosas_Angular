@@ -16,6 +16,6 @@ export class AddCharacterComponent {
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
   emitPersonaje(){
-    return console.log(this.caracther);
+    this.onNewCharacter.emit(this.caracther);
   }
 }
