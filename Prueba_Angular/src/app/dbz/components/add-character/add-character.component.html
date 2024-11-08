@@ -1,6 +1,20 @@
-<form action="">
-  <input type="text" class="form-control mb-2" placeholder="Nombre">
-  <input type="number" class="form-control mb-2" placeholder="Poder">
+<form (ngSubmit)="emitPersonaje()">
+  <input type="text"
+    [(ngModel)]="caracther.name"
+    class="form-control mb-2"
+    placeholder="Nombre"
+    name="name"
+  >
+
+  <input
+    type="number"
+    [(ngModel)]="caracther.name"
+    class="form-control mb-2"
+    placeholder="Poder"
+    name="power"
+  >
+
+  <span>{{caracther | json}}</span>
   <button class="btn btn-info">
     Agregar
   </button>

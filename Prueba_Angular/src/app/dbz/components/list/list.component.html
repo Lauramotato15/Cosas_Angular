@@ -1,14 +1,28 @@
 <h4>Lista personajes</h4>
 <ul class="list-group">
-  <li *ngFor="let personaje of characterList" class="list-group-item">
-    <span>
-      {{personaje.name}}
+  <li *ngFor="let personaje of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last"
+
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-info':isFirst,
+      'list-group-item-success':isLast
+    }">
+    <span class="text-primary">{{ i + 1}}.</span>
+
+    <span> {{ personaje.name }}</span>
+
+    <strong> - Power </strong>
+
+    <span>{{ personaje.power }}</span>
+
+    <span class="mx-2">
+      Es el primero: {{ isFirst }}
     </span>
-    <strong>
-      - power
-    </strong>
-    <span>
-      {{personaje.power}}
-    </span>
+
+    <span>Es el último: {{ isLast }}</span>
+
   </li>
 </ul>

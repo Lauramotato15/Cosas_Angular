@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Character } from './../../interface/character.interface';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'dbz-add-character',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './add-character.component.css'
 })
 export class AddCharacterComponent {
+  public caracther = {
+    name: 'Vegeta',
+    power: 2
+  }
 
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+  emitPersonaje(){
+    return console.log(this.caracther);
+  }
 }
