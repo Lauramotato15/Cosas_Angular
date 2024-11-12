@@ -1,6 +1,6 @@
-<form (ngSubmit)="emitPersonaje()">
+<form (ngSubmit)="emitAddCharacter()">
   <input type="text"
-    [(ngModel)]="caracther.name"
+    [(ngModel)]="character.name"
     class="form-control mb-2"
     placeholder="Nombre"
     name="name"
@@ -8,7 +8,7 @@
 
   <input
     type="number"
-    [(ngModel)]="caracther.power"
+    [(ngModel)]="character.power"
     class="form-control mb-2"
     placeholder="Poder"
     name="power"

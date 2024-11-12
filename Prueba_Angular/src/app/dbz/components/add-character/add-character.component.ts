@@ -7,7 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './add-character.component.css'
 })
 export class AddCharacterComponent {
-  public caracther = {
+  public character = {
+    id:'',
     name: '',
     power: 0
   }
@@ -15,9 +16,10 @@ export class AddCharacterComponent {
   @Output()
   public onNewCharacter: EventEmitter<Character> = new EventEmitter();
 
-  emitPersonaje(){
-    this.onNewCharacter.emit(this.caracther);
-    this.caracther = {
+  emitAddCharacter(){
+    this.onNewCharacter.emit(this.character);
+    this.character = {
+      id:'',
       name:'',
       power: 0
     }
