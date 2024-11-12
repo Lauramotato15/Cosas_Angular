@@ -8,8 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AddCharacterComponent {
   public caracther = {
-    name: 'Vegeta',
-    power: 2
+    name: '',
+    power: 0
   }
 
   @Output()
@@ -17,5 +17,9 @@ export class AddCharacterComponent {
 
   emitPersonaje(){
     this.onNewCharacter.emit(this.caracther);
+    this.caracther = {
+      name:'',
+      power: 0
+    }
   }
 }

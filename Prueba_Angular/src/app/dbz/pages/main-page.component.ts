@@ -23,7 +23,11 @@ export class MainPageComponent {
     }
   ];
 
-  emitCharacter(personaje:Character){
-    return console.log("Hola desde main"+personaje);
+  public emitCharacter(personaje:Character):void{
+    this.arrayCharacter.push(personaje);
+  }
+
+  public emitPersonajeDelete(indice:number):void{
+    this.arrayCharacter.splice(indice,1);
   }
 }
