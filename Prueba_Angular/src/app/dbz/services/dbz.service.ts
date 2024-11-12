@@ -27,4 +27,5 @@ export class DbzService {
   public deleteCharacterById(idPersonaje:string):void{
     this.arrayCharacter = this.arrayCharacter.filter(personaje => personaje.id != idPersonaje);
   }
+
 }
