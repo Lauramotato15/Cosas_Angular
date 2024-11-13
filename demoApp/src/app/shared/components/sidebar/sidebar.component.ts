@@ -10,6 +10,10 @@ export class SidebarComponent {
   constructor(private serviceSearch: GifsService){};
 
   public get arrayFinds(){
-    return [...this.serviceSearch.getHistory];
+    return [...this.serviceSearch.getHistoryGifs];
+  }
+
+  public find(value:string):void{
+    this.serviceSearch.newValueHistory(value);
   }
 }

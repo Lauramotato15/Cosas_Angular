@@ -10,19 +10,19 @@ export class SearchBoxComponent {
 
   constructor(private serviceGift:GifsService ){};
 
-  @ViewChild('find')
+  @ViewChild('value')
   public tagSearch!: ElementRef<HTMLInputElement>;
 
   public onKeyUp(tecla:KeyboardEvent){
     if(tecla.key == 'Enter'){
-      this.findValue();
+      this.find();
     }
   }
 
-  public findValue():void{
-    const findValue = this.tagSearch.nativeElement.value;
-    this.serviceGift.findValueImput(findValue);
-    this.serviceGift.newValueHistory(findValue);
+  public find():void{
+    let value = this.tagSearch.nativeElement.value;
+    value = value.toLowerCase();
+    this.serviceGift.newValueHistory(value);
     this.tagSearch.nativeElement.value = '';
   }
 }
