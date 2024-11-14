@@ -1,4 +1,15 @@
 <div class="d-flex justify-content-center">
-  <img [src]="url" [alt]="alt"
+  <img
+    [src]="url"
+    [alt]="alt"
+    (load)="loadImage()"
+    class="card-img-top w-25 h-25 animate__animated animate__fadeIn"
+    [ngStyle]="{display: load ? '' : 'none'}"
+  >
+  <img
+    *ngIf="!load"
+    src="loader.svg"
+    class="mt-3 w-25 h-25"
+    alt="loader..."
   >
 </div>
