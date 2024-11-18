@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountryService } from '../../services/country.service';
-import { Country } from '../../interfaces/country';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'countries-by-capital-page',
@@ -8,15 +8,27 @@ import { Country } from '../../interfaces/country';
   styleUrl: './by-capital-page.component.css'
 })
 
-export class ByCapitalPageComponent {
+export class ByCapitalPageComponent implements OnInit{
 
-  public arrayCountrys:Country[] = [];
+  public arrayCapital:Country[] = [];
 
-  constructor(private servicioCountries:CountryService){}
+  public isLoading:boolean = false;
 
-  public find(value:string){
-    this.servicioCountries.getFindCountry(value).subscribe(countrys => {
-      this.arrayCountrys = countrys;
+  constructor(private servicioCountries:CountryService){};
+
+  ngOnInit(): void {
+    this.arrayCapital = this.servicioCountries.cacheStore.byCapital.countries;
+  }
+
+  public findCapital(value:string){
+    this.isLoading = true;
+    this.servicioCountries.getFindCapital(value).subscribe(countrys => {
+      this.arrayCapital = countrys;
+      this.isLoading = false;
     });
+  }
+
+  get valueInitial():string{
+    return this.servicioCountries.cacheStore.byCapital.term;
   }
 }
