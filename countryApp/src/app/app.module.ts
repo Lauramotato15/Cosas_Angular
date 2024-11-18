@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import {HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -12,9 +12,10 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
     AppComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between">
+  <input type="text"
+    [placeholder]="placeholder"
+    class="form-control"
+    #txtImput
+    (keyup)="teclaValidador($event)"
+  >
+  <button class="btn btn-info mx-2" (click)="find()">Buscar</button>
+</div>
