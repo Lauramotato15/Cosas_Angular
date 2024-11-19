@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col">
     <!--search box/busqueda -->
-    <shared-search-box (onDebounce)="findByCountry($event)"></shared-search-box>
+    <shared-search-box (onDebounce)="findByCountry($event)" [initialValue]="initValue"></shared-search-box>
   </div>
 </div>
 <div class="row">

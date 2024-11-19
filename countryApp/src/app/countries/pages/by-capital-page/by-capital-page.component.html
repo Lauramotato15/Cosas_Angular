@@ -6,7 +6,11 @@
   <div class="col">
     <!--search box/busqueda -->
     <!--(onEvent)="findCapital($event)"-->
-    <shared-search-box (onDebounce)="findCapital($event)" initialValue="initialValue"></shared-search-box>
+    <shared-search-box
+      (onDebounce)="findCapital($event)"
+      [initialValue]="valueInitial"
+    >
+    </shared-search-box>
   </div>
 </div>
 <div class="row">

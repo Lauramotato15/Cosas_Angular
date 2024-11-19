@@ -28,7 +28,7 @@ export class ByCapitalPageComponent implements OnInit{
     });
   }
 
-  get valueInitial():string{
+  public get valueInitial():string{
     return this.servicioCountries.cacheStore.byCapital.term;
   }
 }
